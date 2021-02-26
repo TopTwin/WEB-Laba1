@@ -11,18 +11,15 @@ window.addEventListener('load', () => {
 })
 
 function sendRequest(input){
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://fakestoreapi.com/products/category/'+ input)
             .then(res => res.json())
             .then(json => {
                 json.forEach(element => {
-                    if (input == element.category){
-                    //console.log(element)
                     out.innerText += "Title: " + element.title + "\n";
                     out.innerText += "Category: " + element.category + "\n";
                     out.innerText += "Description: " + element.description + "\n";
                     out.innerText += "Price: " + element.price + "\n";
-                    out.innerText += "\n\n\n";    
-                    }
+                    out.innerText += "\n\n\n";   
                 });
             })
 }
@@ -73,10 +70,6 @@ function choicePrice(inputPrice){
                 });
             })
 }
-
-window.addEventListener('load', () => {
-    const rad = document.getElementById()
-})
 
 //fetch('https://fakestoreapi.com/products')
 //            .then(res=>res.json())

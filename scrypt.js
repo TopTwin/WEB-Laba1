@@ -5,12 +5,12 @@ window.addEventListener('load', () => {
         if (e.key === 'Enter') {
             //console.log(input.value);
             out.innerText = "";
-            sendRequest(input.value);
+            sendRequestCategory(input.value);
         }
     })
 })
 
-function sendRequest(input){
+function sendRequestCategory(input){
     fetch('https://fakestoreapi.com/products/category/'+ input)
             .then(res => res.json())
             .then(json => {
@@ -71,6 +71,6 @@ function choicePrice(inputPrice){
             })
 }
 
-//fetch('https://fakestoreapi.com/products')
-//            .then(res=>res.json())
-//            .then(json=>console.log(json))
+//fetch('https://fakestoreapi.com/products/1')
+//           .then(res=>res.json())
+//           .then(json=>console.log(json))
